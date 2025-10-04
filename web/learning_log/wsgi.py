@@ -10,7 +10,11 @@ https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+import os
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling  # 注意是 dj_static 不是 dj-static
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learning_log.settings')
 
-application = get_wsgi_application()
+application = Cling(get_wsgi_application())
